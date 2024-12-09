@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tłumacz Kod Morse'a</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Globalne style */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f8ead7, #d7f8ea);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif; /* Elegancka czcionka */
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Subtelny cień */
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
+
+        /* Pole tekstowe */
+        textarea {
+            width: 80%;
+            padding: 15px;
+            font-size: 1em;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            resize: none;
+            background-color: #fff;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #3CF1B0; /* Neonowy miętowy */
+            box-shadow: 0 0 15px rgba(60, 241, 176, 0.75); /* Miętowy blask */
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Przyciski */
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3CF1B0; /* Neonowy miętowy */
+            box-shadow: 0 0 15px rgba(60, 241, 176, 0.75); /* Miętowy blask */
+        }
+
+        /* Kontener dla przycisków */
+        #buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Dodaj margines i cienie dla całości */
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dodatkowy styl dla sekcji wyników */
+        #outputText {
+            background-color: #f4f4f9;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            font-size: 1em;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tłumacz kodu Morse'a</h1>
+        
+        <textarea id="inputText" placeholder="Wpisz tekst lub kod Morse'a..."></textarea><br>
+
+        <div id="buttons-container">
+            <button id="toMorseButton">Tekst na Morse'a</button>
+            <button id="toTextButton">Morse na Tekst</button>
+        </div>
+
+        <h2>Wynik:</h2>
+        <textarea id="outputText" readonly></textarea>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
